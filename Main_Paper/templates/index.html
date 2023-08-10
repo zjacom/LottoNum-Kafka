@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Good Luck!</title>
+    <style>
+    h1 {
+        margin-bottom: 20px;
+        font-size: 24px;  /* 원하는 크기로 조정 */
+        text-align: center;
+    }
+    form {
+        margin-top: 20px;
+        font-size: 36px;
+        text-align: center;
+    }
+    strong{
+        font-size: 24px;  /* strong 태그의 크기를 키움 */
+        height: 36px;  /* 동일한 높이로 지정 */
+        line-height: 36px;  /* 동일한 높이와 줄 높이로 지정 */
+    }
+    input[type="number"], button {
+        padding: 10px;
+        line-height: 36px;
+        font-size: 12px;
+    }
+    </style>
+</head>
+<body>
+    <h1>로또 추첨 번호</h1>
+    <hr>
+    <br>
+
+    <form action="/" method="post">
+        <strong>원하는 묶음의 수: </strong>
+        <input type="number" name="input_value" min="1" max="5">
+        <button type="submit">생성</button>
+    </form>
+</body>
+</html>

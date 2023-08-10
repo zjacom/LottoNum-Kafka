@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        h1 {
+        margin-bottom: 20px;
+        font-size: 48px;
+        text-align: center;
+        }
+        form {
+        margin-top: 20px;
+        text-align: center;
+        }
+        strong{
+            font-size: 24px;  /* strong 태그의 크기를 키움 */
+            height: 36px;  /* 동일한 높이로 지정 */
+            line-height: 36px;  /* 동일한 높이와 줄 높이로 지정 */
+        }
+        input[type="number"], button {
+            padding: 10px;
+            line-height: 36px;
+            font-size: 12px;  /* 원하는 크기로 조정 */
+        }
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 100px;
+            
+        }
+        
+        .clear {
+            flex-basis: 100%;
+            height: 0;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: white;
+            border: 2px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+        }
+
+    </style>
+    <title>Good Luck!</title>
+</head>
+<body>
+    <h1>로또 추첨 번호</h1>
+    <hr>
+    <br>
+    <form action="/" method="post">
+        <strong>원하는 묶음의 수: </strong>
+        <input type="number" name="input_value" min="1" max="5">
+        <button type="submit">생성</button>
+    </form>
+
+    <div id="container">
+        {% set alphabet_list = ['A', 'B', 'C', 'D', 'E'] %}
+        {% for index in range(data_list|length) %}
+            {% set data = data_list[index] %}
+            {% set alphabet = alphabet_list[index] %}
+            <div><strong>{{ alphabet }}</strong></div>
+            <div class="circle">{{ data['first'] }}</div>
+            <div class="circle">{{ data['second'] }}</div>
+            <div class="circle">{{ data['third'] }}</div>
+            <div class="circle">{{ data['fourth'] }}</div>
+            <div class="circle">{{ data['fifth'] }}</div>
+            <div class="circle">{{ data['sixth'] }}</div>
+
+            <div class="clear"></div>
+        {% endfor %}
+    </div>
+</body>
+</html>
